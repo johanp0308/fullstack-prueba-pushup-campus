@@ -87,12 +87,20 @@ public class ProductoDTO {
     }
 
 
-    public static ProductoEntity tProductoEntity(){
+    public static ProductoEntity tProductoEntity(ProductoDTO pDto){
         ProductoEntity entity = new ProductoEntity();
-
-        
+        entity.setId(pDto.getId());
+        entity.setNombre(pDto.getNombre());
+        entity.setPrecio(pDto.getPrecio());
         return entity;
     }
     
+    public static ProductoDTO tDto(ProductoEntity pEntity){
+        ProductoDTO productoDTO = new ProductoDTO();
+        productoDTO.setId(pEntity.getId());
+        productoDTO.setNombre(pEntity.getNombre());
+        productoDTO.setPrecio(pEntity.getPrecio());
+        return productoDTO;
+    }
 
 }
